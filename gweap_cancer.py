@@ -12,7 +12,7 @@ newdf = df.interpolate()
 if newdf["Modeled Rate (Trend Line)"].isnull().values.any():
     newdf = newdf.fillna(method='bfill')
 # print(newdf)
-newdf.to_csv("cancer_rate_new.csv")
+newdf.to_csv("cancer_rate_new.csv",sep=",",index=False)
 newset2 = df.fillna(method='ffill')
 if newset2["Modeled Rate (Trend Line)"].isnull().values.any():
     newset2 = newset2.fillna(method='bfill')
