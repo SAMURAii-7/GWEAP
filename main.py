@@ -8,7 +8,6 @@ import warnings
 import matplotlib.pyplot as plt
 warnings.filterwarnings("ignore")
 plt.style.use('fivethirtyeight')
-import statsmodels.api as sm
 import matplotlib
 from prophet import Prophet
 import math
@@ -107,8 +106,7 @@ def show_sea_level_change():
     plt.legend();
 
     # seasonal decomposition plot
-    res = sm.tsa.seasonal_decompose(ts.values,period=12,model="additive")
-    fig3 = res.plot()
+    
 
     # Prophet forecast
     ts = df.rename(columns={'Time':'ds', 'GMSL':'y','GMSL uncertainty':'yhat'})
